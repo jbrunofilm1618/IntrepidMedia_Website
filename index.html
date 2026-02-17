@@ -118,6 +118,7 @@
 
   .nav-links a:hover {
     color: var(--color-gold);
+    text-shadow: 0 0 12px rgba(224, 159, 31, 0.3);
   }
 
   .btn-nav {
@@ -137,6 +138,8 @@
   .btn-nav:hover {
     background: var(--color-gold);
     color: var(--color-bg-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(224, 159, 31, 0.35), 0 0 30px rgba(224, 159, 31, 0.15), 0 0 60px rgba(224, 159, 31, 0.06);
   }
 
   /* ============ MOBILE MENU ============ */
@@ -272,7 +275,7 @@
     padding: 14px 36px;
     border-radius: 4px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     border: 1px solid transparent;
   }
@@ -281,11 +284,14 @@
     background: var(--color-blue);
     color: #fff;
     border-color: var(--color-blue);
+    transition: all 0.4s ease;
   }
 
   .btn-primary:hover {
     background: var(--color-blue-deep);
     border-color: var(--color-blue-deep);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(96, 165, 250, 0.35), 0 0 40px rgba(96, 165, 250, 0.2), 0 0 80px rgba(96, 165, 250, 0.08);
   }
 
   .btn-outline {
@@ -297,6 +303,8 @@
   .btn-outline:hover {
     border-color: var(--color-gold);
     color: var(--color-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(224, 159, 31, 0.25), 0 0 40px rgba(224, 159, 31, 0.12), 0 0 80px rgba(224, 159, 31, 0.05);
   }
 
   .hero-line {
@@ -392,12 +400,17 @@
     border: 1px solid rgba(241, 245, 249, 0.06);
     border-radius: 8px;
     background: #0F1B2D;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .service-card:hover {
-    border-color: var(--color-blue);
-    box-shadow: 0 8px 32px rgba(96, 165, 250, 0.1);
+    border-color: rgba(96, 165, 250, 0.35);
+    transform: translateY(-8px);
+    box-shadow: 
+      0 8px 24px rgba(96, 165, 250, 0.15),
+      0 0 40px rgba(96, 165, 250, 0.1),
+      0 0 80px rgba(96, 165, 250, 0.05),
+      inset 0 1px 0 rgba(96, 165, 250, 0.12);
   }
 
   .service-icon {
@@ -435,12 +448,17 @@
     border: 1px solid rgba(241, 245, 249, 0.06);
     border-radius: 8px;
     padding: 36px 32px;
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .work-card:hover {
-    border-color: var(--color-blue);
-    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.35);
+    transform: translateY(-8px);
+    box-shadow: 
+      0 8px 24px rgba(96, 165, 250, 0.15),
+      0 0 40px rgba(96, 165, 250, 0.1),
+      0 0 80px rgba(96, 165, 250, 0.05),
+      inset 0 1px 0 rgba(96, 165, 250, 0.12);
   }
 
   .work-card .client-name {
@@ -560,7 +578,7 @@
     transition: opacity 0.3s ease;
   }
 
-  .boyd-toggle:hover { opacity: 1; }
+  .boyd-toggle:hover { opacity: 1; text-shadow: 0 0 12px rgba(224, 159, 31, 0.3); }
   .boyd-toggle::-webkit-details-marker { display: none; }
 
   .boyd-arrow {
@@ -631,7 +649,7 @@
   .boyd-stat-label {
     font-family: var(--font-ui);
     font-size: 0.72rem;
-    color: rgba(241, 245, 249, 0.4);
+    color: rgba(241, 245, 249, 0.6);
     line-height: 1.4;
   }
 
@@ -652,7 +670,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(241, 245, 249, 0.3);
+    color: rgba(241, 245, 249, 0.55);
     min-width: 72px;
     flex-shrink: 0;
   }
@@ -703,6 +721,13 @@
     letter-spacing: 0.06em;
     color: var(--color-text-secondary);
     text-transform: uppercase;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+    cursor: default;
+  }
+
+  .clients-row span:hover {
+    color: var(--color-gold);
+    text-shadow: 0 0 16px rgba(224, 159, 31, 0.35);
   }
 
   /* ============ ABOUT ============ */
@@ -790,6 +815,8 @@
 
   .contact-info a:hover {
     border-color: var(--color-gold);
+    color: var(--color-gold);
+    text-shadow: 0 0 12px rgba(224, 159, 31, 0.3);
   }
 
   /* ============ FAQ ============ */
@@ -816,6 +843,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .faq-item summary:hover {
+    color: var(--color-gold);
+    text-shadow: 0 0 12px rgba(224, 159, 31, 0.25);
   }
 
   .faq-item summary::-webkit-details-marker {
@@ -981,8 +1014,8 @@
         <div class="service-icon">
           <!-- Creative Direction: Circle within a circle, gold dashed outer -->
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="17" stroke="#94A3B8" stroke-width="1.2" opacity="0.4"/>
-            <circle cx="20" cy="20" r="9" stroke="#E09F1F" stroke-width="1" stroke-dasharray="3 2.5" opacity="0.5"/>
+            <circle cx="20" cy="20" r="17" stroke="#94A3B8" stroke-width="1.2" opacity="0.9"/>
+            <circle cx="20" cy="20" r="9" stroke="#E09F1F" stroke-width="1" stroke-dasharray="3 2.5" opacity="0.8"/>
           </svg>
         </div>
         <h3>Creative Direction</h3>
@@ -994,16 +1027,16 @@
           <!-- Video Production: Viewfinder corner brackets with gold center mark -->
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#94A3B8" stroke-width="1.2">
             <!-- Top-left corner -->
-            <path d="M4,12 L4,4 L12,4" fill="none" opacity="0.4"/>
+            <path d="M4,12 L4,4 L12,4" fill="none" opacity="0.9"/>
             <!-- Top-right corner -->
-            <path d="M28,4 L36,4 L36,12" fill="none" opacity="0.4"/>
+            <path d="M28,4 L36,4 L36,12" fill="none" opacity="0.9"/>
             <!-- Bottom-left corner -->
-            <path d="M4,28 L4,36 L12,36" fill="none" opacity="0.4"/>
+            <path d="M4,28 L4,36 L12,36" fill="none" opacity="0.9"/>
             <!-- Bottom-right corner -->
-            <path d="M28,36 L36,36 L36,28" fill="none" opacity="0.4"/>
+            <path d="M28,36 L36,36 L36,28" fill="none" opacity="0.9"/>
             <!-- Center crosshair -->
-            <line x1="17" y1="20" x2="23" y2="20" stroke="#E09F1F" stroke-width="1" opacity="0.7"/>
-            <line x1="20" y1="17" x2="20" y2="23" stroke="#E09F1F" stroke-width="1" opacity="0.7"/>
+            <line x1="17" y1="20" x2="23" y2="20" stroke="#E09F1F" stroke-width="1" opacity="0.9"/>
+            <line x1="20" y1="17" x2="20" y2="23" stroke="#E09F1F" stroke-width="1" opacity="0.9"/>
           </svg>
         </div>
         <h3>Video Production</h3>
@@ -1014,14 +1047,14 @@
         <div class="service-icon">
           <!-- Marketing Strategy: Compass with gold center -->
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="16" stroke="#94A3B8" stroke-width="1.2" opacity="0.35"/>
+            <circle cx="20" cy="20" r="16" stroke="#94A3B8" stroke-width="1.2" opacity="0.65"/>
             <!-- North pointer -->
-            <polygon points="20,6 22.5,17 20,15 17.5,17" fill="#94A3B8" fill-opacity="0.2" stroke="#94A3B8" stroke-width="0.8" stroke-opacity="0.4"/>
+            <polygon points="20,6 22.5,17 20,15 17.5,17" fill="#94A3B8" fill-opacity="0.8" stroke="#94A3B8" stroke-width="0.8" stroke-opacity="0.9"/>
             <!-- South pointer -->
-            <polygon points="20,34 17.5,23 20,25 22.5,23" fill="#94A3B8" fill-opacity="0.08" stroke="#94A3B8" stroke-width="0.8" stroke-opacity="0.25"/>
+            <polygon points="20,34 17.5,23 20,25 22.5,23" fill="#94A3B8" fill-opacity="0.3" stroke="#94A3B8" stroke-width="0.8" stroke-opacity="0.55"/>
             <!-- Cardinal ticks -->
-            <line x1="4" y1="20" x2="7" y2="20" stroke="#94A3B8" stroke-width="0.8" opacity="0.3"/>
-            <line x1="33" y1="20" x2="36" y2="20" stroke="#94A3B8" stroke-width="0.8" opacity="0.3"/>
+            <line x1="4" y1="20" x2="7" y2="20" stroke="#94A3B8" stroke-width="0.8" opacity="0.6"/>
+            <line x1="33" y1="20" x2="36" y2="20" stroke="#94A3B8" stroke-width="0.8" opacity="0.6"/>
             <circle cx="20" cy="20" r="2" fill="#E09F1F"/>
           </svg>
         </div>
@@ -1034,29 +1067,29 @@
           <!-- Post-Production: 35mm film strip (vertical) -->
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
             <!-- Film strip body -->
-            <rect x="10" y="2" width="20" height="36" rx="1.5" stroke="#94A3B8" stroke-width="1.2" opacity="0.4"/>
+            <rect x="10" y="2" width="20" height="36" rx="1.5" stroke="#94A3B8" stroke-width="1.2" opacity="0.9"/>
             <!-- Sprocket holes left -->
-            <rect x="11.5" y="5" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="11.5" y="11" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="11.5" y="17" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="11.5" y="23" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="11.5" y="29" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="11.5" y="35" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
+            <rect x="11.5" y="5" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="11.5" y="11" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="11.5" y="17" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="11.5" y="23" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="11.5" y="29" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="11.5" y="35" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
             <!-- Sprocket holes right -->
-            <rect x="25.5" y="5" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="25.5" y="11" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="25.5" y="17" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="25.5" y="23" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="25.5" y="29" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
-            <rect x="25.5" y="35" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.2"/>
+            <rect x="25.5" y="5" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="25.5" y="11" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="25.5" y="17" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="25.5" y="23" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="25.5" y="29" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
+            <rect x="25.5" y="35" width="3" height="2" rx="0.5" fill="#94A3B8" opacity="0.8"/>
             <!-- Frame lines -->
-            <line x1="15" y1="9.5" x2="25" y2="9.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.2"/>
-            <line x1="15" y1="15.5" x2="25" y2="15.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.2"/>
-            <line x1="15" y1="21.5" x2="25" y2="21.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.2"/>
-            <line x1="15" y1="27.5" x2="25" y2="27.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.2"/>
-            <line x1="15" y1="33.5" x2="25" y2="33.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.2"/>
+            <line x1="15" y1="9.5" x2="25" y2="9.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.8"/>
+            <line x1="15" y1="15.5" x2="25" y2="15.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.8"/>
+            <line x1="15" y1="21.5" x2="25" y2="21.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.8"/>
+            <line x1="15" y1="27.5" x2="25" y2="27.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.8"/>
+            <line x1="15" y1="33.5" x2="25" y2="33.5" stroke="#94A3B8" stroke-width="0.6" opacity="0.8"/>
             <!-- Highlighted "current" frame -->
-            <rect x="15.5" y="16" width="9" height="5" rx="0.5" fill="#E09F1F" fill-opacity="0.15" stroke="#E09F1F" stroke-width="0.6" stroke-opacity="0.4"/>
+            <rect x="15.5" y="16" width="9" height="5" rx="0.5" fill="#E09F1F" fill-opacity="0.4" stroke="#E09F1F" stroke-width="0.6" stroke-opacity="0.9"/>
           </svg>
         </div>
         <h3>Post-Production & Delivery</h3>
