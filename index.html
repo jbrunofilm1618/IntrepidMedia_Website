@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Intrepid Media — Creative Production & Video Strategy Consultancy | Bay Area</title>
+<meta name="description" content="Intrepid Media is a creative production consultancy specializing in video strategy, creative direction, and brand storytelling. Founded by an 8-year Apple creative leader with 17+ years in entertainment, tech, and brand production. Serving companies from the Bay Area and beyond.">
+<meta name="keywords" content="creative production consultancy, video production, creative direction, brand storytelling, video strategy, Bay Area, Apple, tech company video, corporate video production">
+<meta name="author" content="Intrepid Media LLC">
+<link rel="canonical" href="https://intrepidmedia.co">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Intrepid Media — Creative Production & Video Strategy">
+<meta property="og:description" content="Video strategy, creative direction, and brand storytelling from a consultancy built on 17+ years across Hollywood, Apple, and the brand world.">
+<meta property="og:url" content="https://intrepidmedia.co">
+<meta property="og:site_name" content="Intrepid Media">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Intrepid Media — Creative Production & Strategy">
+<meta name="twitter:description" content="Video strategy, creative direction, and brand storytelling. Founded by an 8-year Apple creative leader.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F1F5F9;
+    --color-bg-dark: #0F1B2D;
+    --color-bg-slate: #E2E8F0;
+    --color-text: #1E293B;
+    --color-text-secondary: #475569;
+    --color-text-on-dark: #F1F5F9;
+    --color-blue: #2563EB;
+    --color-blue-deep: #1D4ED8;
+    --color-gold: #E09F1F;
+    --color-gold-muted: #C48A1A;
+    --color-border: #CBD5E1;
+    --color-light-blue: #DBEAFE;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Lora', Georgia, serif;
+    --font-ui: 'Outfit', sans-serif;
+    --max-width: 1100px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-blue);
+    color: #fff;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(15, 27, 45, 0.95);
+    box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(241, 245, 249, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-gold);
+  }
+
+  .btn-nav {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-nav:hover {
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+  }
+
+  /* ============ MOBILE MENU ============ */
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 110;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text-on-dark);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    background: var(--color-bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 40px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(224, 159, 31, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--color-text-on-dark);
+    margin-bottom: 32px;
+    max-width: 700px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(241, 245, 249, 0.65);
+    max-width: 560px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--color-blue);
+    color: #fff;
+    border-color: var(--color-blue);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-blue-deep);
+    border-color: var(--color-blue-deep);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-text-on-dark);
+    border-color: rgba(241, 245, 249, 0.3);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .hero-line {
+    width: 60px;
+    height: 2px;
+    background: var(--color-blue);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.0s forwards;
+  }
+
+  /* ============ ROTATING WORD ============ */
+  .rotating-word-wrap {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: bottom;
+    height: 1.2em;
+    min-width: 200px;
+  }
+
+  .rotating-word {
+    display: inline-block;
+    position: relative;
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  .word-inner {
+    display: inline-block;
+  }
+
+  .word-exit {
+    animation: wordSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .word-enter {
+    animation: wordSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes wordSlideUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100%); opacity: 0; }
+  }
+
+  @keyframes wordSlideIn {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* ============ SECTIONS (GLOBAL) ============ */
+  section {
+    padding: clamp(80px, 10vw, 120px) 40px;
+  }
+
+  .section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--color-text);
+    margin-bottom: 48px;
+  }
+
+  /* ============ SERVICES ============ */
+  .services-section {
+    background: #fff;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .service-card {
+    padding: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-blue);
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08);
+  }
+
+  .service-icon {
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  /* ============ WORK ============ */
+  .work-section {
+    background: var(--color-bg);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .work-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 36px 32px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .work-card:hover {
+    border-color: var(--color-blue);
+    transform: translateY(-4px);
+  }
+
+  .work-card .client-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .work-card .project-type {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: 16px;
+  }
+
+  .work-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ============ APPROACH ============ */
+  .approach-section {
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+  }
+
+  .approach-section .section-label {
+    color: var(--color-gold);
+  }
+
+  .approach-section .section-title {
+    color: var(--color-text-on-dark);
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .approach-step {
+    text-align: center;
+    position: relative;
+  }
+
+  .approach-number {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  .approach-step h3 {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-text-on-dark);
+    margin-bottom: 12px;
+  }
+
+  .approach-step p {
+    font-size: 0.88rem;
+    color: rgba(241, 245, 249, 0.6);
+    line-height: 1.6;
+  }
+
+  .approach-connector {
+    position: absolute;
+    top: 20px;
+    right: -16px;
+    width: 32px;
+    height: 1px;
+    background: rgba(224, 159, 31, 0.3);
+  }
+
+  .approach-step:last-child .approach-connector {
+    display: none;
+  }
+
+  .approach-intro {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(241, 245, 249, 0.7);
+    max-width: 600px;
+  }
+
+  /* ============ BOYD BREAKOUT ============ */
+  .boyd-breakout {
+    margin-top: 56px;
+    border-top: 1px solid rgba(241, 245, 249, 0.08);
+    padding-top: 32px;
+  }
+
+  .boyd-toggle {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-gold);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .boyd-toggle:hover { opacity: 1; }
+  .boyd-toggle::-webkit-details-marker { display: none; }
+
+  .boyd-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+  }
+
+  .boyd-breakout[open] .boyd-arrow {
+    transform: rotate(180deg);
+  }
+
+  .boyd-content {
+    margin-top: 40px;
+    max-width: 720px;
+  }
+
+  .boyd-section {
+    margin-bottom: 40px;
+  }
+
+  .boyd-label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold);
+    opacity: 0.6;
+    margin-bottom: 16px;
+  }
+
+  .boyd-content p {
+    font-size: 0.95rem;
+    color: rgba(241, 245, 249, 0.7);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .boyd-content strong {
+    color: var(--color-text-on-dark);
+  }
+
+  .boyd-content em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  .boyd-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+    padding: 32px 0;
+    border-top: 1px solid rgba(241, 245, 249, 0.06);
+    border-bottom: 1px solid rgba(241, 245, 249, 0.06);
+  }
+
+  .boyd-stat { text-align: center; }
+
+  .boyd-stat-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-bottom: 6px;
+  }
+
+  .boyd-stat-label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: rgba(241, 245, 249, 0.4);
+    line-height: 1.4;
+  }
+
+  .arcs-comparison {
+    margin: 24px 0;
+  }
+
+  .arcs-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(241, 245, 249, 0.05);
+  }
+
+  .arcs-ooda {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(241, 245, 249, 0.3);
+    min-width: 72px;
+    flex-shrink: 0;
+  }
+
+  .arcs-arrow {
+    color: var(--color-gold);
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  .arcs-ours {
+    font-size: 0.88rem;
+    color: rgba(241, 245, 249, 0.65);
+    line-height: 1.6;
+  }
+
+  .arcs-ours strong {
+    color: var(--color-text-on-dark);
+  }
+
+  .boyd-closing {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-gold) !important;
+    opacity: 0.7;
+    margin-top: 32px;
+  }
+
+  /* ============ CLIENTS ============ */
+  .clients-section {
+    background: #fff;
+  }
+
+  .clients-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+    opacity: 0.5;
+  }
+
+  .clients-row span {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-section {
+    background: var(--color-bg);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-secondary);
+    margin-bottom: 24px;
+  }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 8px;
+  }
+
+  .about-stat .number {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--color-blue);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .about-stat .label {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-section {
+    background: var(--color-bg-dark);
+    color: var(--color-text-on-dark);
+    text-align: center;
+  }
+
+  .contact-section .section-label {
+    color: var(--color-gold);
+  }
+
+  .contact-section .section-title {
+    color: var(--color-text-on-dark);
+    margin-bottom: 16px;
+  }
+
+  .contact-subtitle {
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    color: rgba(241, 245, 249, 0.6);
+    margin-bottom: 48px;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .contact-info a {
+    font-size: 0.95rem;
+    color: var(--color-text-on-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(241, 245, 249, 0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-info a:hover {
+    border-color: var(--color-gold);
+  }
+
+  /* ============ FAQ ============ */
+  .faq-section {
+    background: #fff;
+  }
+
+  .faq-list {
+    max-width: 720px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: 24px 0;
+  }
+
+  .faq-item summary {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-family: var(--font-ui);
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin-top: 16px;
+    padding-right: 32px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 32px 40px;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal.will-animate {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .reveal.will-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    html { font-size: 18px; }
+    nav { padding: 16px 24px; }
+    section { padding: clamp(60px, 8vw, 100px) 24px; }
+    .hero { padding: 120px 24px 80px; }
+    .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
+    .approach-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
+    .approach-connector { display: none; }
+    .about-content { grid-template-columns: 1fr; gap: 40px; }
+    .about-stats { flex-direction: row; gap: 40px; }
+    .contact-info { flex-direction: column; gap: 16px; }
+
+    footer { padding: 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-hamburger { display: block; }
+    nav .nav-links {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 27, 45, 0.98);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      z-index: 105;
+    }
+    nav .nav-links.mobile-open { display: flex; }
+    nav .nav-links a { font-size: 1.1rem; color: var(--color-text-on-dark); }
+
+    .hero { min-height: auto; padding: 100px 24px 60px; }
+    .hero h1 { font-size: 2rem; }
+    .hero-sub { font-size: 1rem; }
+    .approach-grid { grid-template-columns: 1fr; }
+    .about-stats { flex-direction: column; gap: 24px; }
+
+    .service-card { padding: 28px 24px; }
+    .work-card { padding: 28px 24px; }
+    .boyd-stats { grid-template-columns: 1fr; gap: 20px; }
+    .arcs-row { flex-direction: column; gap: 4px; }
+    .arcs-ooda { min-width: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav" role="navigation">
+  <a href="#" class="nav-brand" aria-label="Intrepid Media home">
+    <svg class="nav-logo" width="180" height="32" viewBox="0 0 360 110">
+      <text x="34" y="92" font-family="'Playfair Display', serif" font-size="110" font-weight="900" fill="#E09F1F" font-style="italic">I</text>
+      <text x="52" y="92" font-family="'Playfair Display', serif" font-size="110" font-weight="900" fill="#F1F5F9" font-style="italic">M</text>
+      <text x="168" y="62" font-family="'Outfit', sans-serif" font-size="22" font-weight="600" fill="#F1F5F9" letter-spacing="3">INTREPID</text>
+      <text x="168" y="86" font-family="'Outfit', sans-serif" font-size="22" font-weight="300" fill="rgba(241,245,249,0.5)" letter-spacing="3">MEDIA</text>
+    </svg>
+  </a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="btn-nav">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Creative Production & Strategy</div>
+    <h1>Building stories that move your <span class="rotating-word-wrap"><span class="rotating-word" id="rotatingWord"><span class="word-inner">business.</span></span></span></h1>
+    <p class="hero-sub">Intrepid Media is a creative production consultancy specializing in video strategy, brand storytelling, and creative direction — from concept to final delivery.</p>
+    <div class="hero-line"></div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+      <a href="#work" class="btn btn-outline">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-inner reveal">
+    <div class="section-label">What We Do</div>
+    <div class="section-title">Services</div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- Creative Direction: Circle within a circle, gold dashed outer -->
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="17" stroke="#1E293B" stroke-width="1.2" opacity="0.4"/>
+            <circle cx="20" cy="20" r="9" stroke="#E09F1F" stroke-width="1" stroke-dasharray="3 2.5" opacity="0.5"/>
+          </svg>
+        </div>
+        <h3>Creative Direction</h3>
+        <p>We translate business goals into creative strategy — developing concepts, scripts, and visual frameworks that align brand messaging with measurable outcomes. From pitch to production, we shape the vision.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- Video Production: Viewfinder corner brackets with gold center mark -->
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#1E293B" stroke-width="1.2">
+            <!-- Top-left corner -->
+            <path d="M4,12 L4,4 L12,4" fill="none" opacity="0.4"/>
+            <!-- Top-right corner -->
+            <path d="M28,4 L36,4 L36,12" fill="none" opacity="0.4"/>
+            <!-- Bottom-left corner -->
+            <path d="M4,28 L4,36 L12,36" fill="none" opacity="0.4"/>
+            <!-- Bottom-right corner -->
+            <path d="M28,36 L36,36 L36,28" fill="none" opacity="0.4"/>
+            <!-- Center crosshair -->
+            <line x1="17" y1="20" x2="23" y2="20" stroke="#E09F1F" stroke-width="1" opacity="0.7"/>
+            <line x1="20" y1="17" x2="20" y2="23" stroke="#E09F1F" stroke-width="1" opacity="0.7"/>
+          </svg>
+        </div>
+        <h3>Video Production</h3>
+        <p>End-to-end video production from pre-production planning through post-production delivery. Branded content, customer stories, product launches, sales driving content, and broadcast spots — at any scale.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- Marketing Strategy: Compass with gold center -->
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="16" stroke="#1E293B" stroke-width="1.2" opacity="0.35"/>
+            <!-- North pointer -->
+            <polygon points="20,6 22.5,17 20,15 17.5,17" fill="#1E293B" fill-opacity="0.2" stroke="#1E293B" stroke-width="0.8" stroke-opacity="0.4"/>
+            <!-- South pointer -->
+            <polygon points="20,34 17.5,23 20,25 22.5,23" fill="#1E293B" fill-opacity="0.08" stroke="#1E293B" stroke-width="0.8" stroke-opacity="0.25"/>
+            <!-- Cardinal ticks -->
+            <line x1="4" y1="20" x2="7" y2="20" stroke="#1E293B" stroke-width="0.8" opacity="0.3"/>
+            <line x1="33" y1="20" x2="36" y2="20" stroke="#1E293B" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="20" cy="20" r="2" fill="#E09F1F"/>
+          </svg>
+        </div>
+        <h3>Marketing Strategy Alignment</h3>
+        <p>We work upstream with your marketing and sales teams to identify where creative drives impact. Every deliverable maps back to a business need — not just a brief.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <!-- Post-Production: 35mm film strip (vertical) -->
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <!-- Film strip body -->
+            <rect x="10" y="2" width="20" height="36" rx="1.5" stroke="#1E293B" stroke-width="1.2" opacity="0.4"/>
+            <!-- Sprocket holes left -->
+            <rect x="11.5" y="5" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="11.5" y="11" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="11.5" y="17" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="11.5" y="23" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="11.5" y="29" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="11.5" y="35" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <!-- Sprocket holes right -->
+            <rect x="25.5" y="5" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="25.5" y="11" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="25.5" y="17" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="25.5" y="23" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="25.5" y="29" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <rect x="25.5" y="35" width="3" height="2" rx="0.5" fill="#1E293B" opacity="0.2"/>
+            <!-- Frame lines -->
+            <line x1="15" y1="9.5" x2="25" y2="9.5" stroke="#1E293B" stroke-width="0.6" opacity="0.2"/>
+            <line x1="15" y1="15.5" x2="25" y2="15.5" stroke="#1E293B" stroke-width="0.6" opacity="0.2"/>
+            <line x1="15" y1="21.5" x2="25" y2="21.5" stroke="#1E293B" stroke-width="0.6" opacity="0.2"/>
+            <line x1="15" y1="27.5" x2="25" y2="27.5" stroke="#1E293B" stroke-width="0.6" opacity="0.2"/>
+            <line x1="15" y1="33.5" x2="25" y2="33.5" stroke="#1E293B" stroke-width="0.6" opacity="0.2"/>
+            <!-- Highlighted "current" frame -->
+            <rect x="15.5" y="16" width="9" height="5" rx="0.5" fill="#E09F1F" fill-opacity="0.15" stroke="#E09F1F" stroke-width="0.6" stroke-opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>Post-Production & Delivery</h3>
+        <p>Editorial, color grading, motion graphics, sound design, and final QC. We manage the entire post pipeline — in-house or through our vetted vendor network — to deliver broadcast-ready assets on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work-section" id="work">
+  <div class="section-inner reveal">
+    <div class="section-label">Selected Work</div>
+    <div class="section-title">Clients & Projects</div>
+
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="project-type">Branded Documentary</div>
+        <div class="client-name">Booksy</div>
+        <p>Three-part branded documentary series profiling stylists and barbers who built their businesses on the Booksy platform. Produced in partnership with Unknown Certainty.</p>
+      </div>
+
+      <div class="work-card">
+        <div class="project-type">Launch Campaign</div>
+        <div class="client-name">Yoshi Mobility</div>
+        <p>Launch video campaign for the Bay Area mobility company providing on-demand vehicle fueling, fleet services, and mobile EV charging.</p>
+      </div>
+
+      <div class="work-card">
+        <div class="project-type">Broadcast Spots</div>
+        <div class="client-name">Taco Bell</div>
+        <p>Creative consulting across a run of nationally televised spots, beginning with a brand partnership featuring NFL player Davante Adams and expanding into ongoing collaboration.</p>
+      </div>
+
+      <div class="work-card">
+        <div class="project-type">Brand Vision Film</div>
+        <div class="client-name">Pura</div>
+        <p>Internal brand vision film for the tech-forward fragrance company — producing proofs of concept for future product lines and applications.</p>
+      </div>
+
+      <div class="work-card">
+        <div class="project-type">Brand Film</div>
+        <div class="client-name">Familia Grove</div>
+        <p>Premium olive oil brand film capturing the heritage, craft, and family story behind a multi-generational grove in the heart of California.</p>
+      </div>
+
+      <div class="work-card">
+        <div class="project-type">Enterprise Creative</div>
+        <div class="client-name">Apple</div>
+        <p>8 years of video production and creative direction for Apple's global sales organization — building content that energized enterprise teams and informed product strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach-section" id="approach">
+  <div class="section-inner reveal">
+    <div class="section-label">How We Work</div>
+    <div class="section-title">Our Approach</div>
+    <p class="approach-intro">Every project runs through the same repeatable process — a creative development loop refined over 17 years of production work across entertainment, tech, and brand storytelling.</p>
+
+    <div class="approach-grid">
+      <div class="approach-step">
+        <div class="approach-number">A</div>
+        <h3>Analyze</h3>
+        <p>Research the initiative. Understand the real business need behind the ask — not just the brief, but the why.</p>
+        <div class="approach-connector"></div>
+      </div>
+
+      <div class="approach-step">
+        <div class="approach-number">R</div>
+        <h3>Refine</h3>
+        <p>Break it down into business intent, measurability, and feasibility. Separate signal from noise.</p>
+        <div class="approach-connector"></div>
+      </div>
+
+      <div class="approach-step">
+        <div class="approach-number">C</div>
+        <h3>Craft</h3>
+        <p>Create pitches, mockups, and pre-visualizations. Build the story before building the deliverable.</p>
+        <div class="approach-connector"></div>
+      </div>
+
+      <div class="approach-step">
+        <div class="approach-number">S</div>
+        <h3>Steer</h3>
+        <p>Determine execution — internal vs. vendor — aligning vision with resources. Then loop back.</p>
+      </div>
+    </div>
+
+    <!-- Boyd OODA Breakout -->
+    <details class="boyd-breakout">
+      <summary class="boyd-toggle">Where does this come from? The OODA Loop and Col. John Boyd <span class="boyd-arrow">↓</span></summary>
+      <div class="boyd-content">
+        <div class="boyd-section">
+          <div class="boyd-label">The Origin</div>
+          <p>In the skies over Korea in 1953, a young Air Force pilot named <strong>John Boyd</strong> made a bet that would change military strategy forever. Known as "Forty Second Boyd," he wagered he could defeat any opposing pilot in simulated combat in under 40 seconds — and he never lost.</p>
+          <p>Boyd wasn't the fastest pilot or the best shot. His edge was <em>tempo</em>. While studying thermodynamics at Georgia Tech, he developed Energy-Maneuverability Theory, proving that the F-86 Sabre's dominance over the Soviet MiG-15 wasn't about firepower — it was about <em>agility</em>. The Sabre's bubble canopy gave American pilots a wider field of observation. Its hydraulic flight controls let them transition between maneuvers faster. They could see more, orient quicker, decide sooner, and act before their opponents could react.</p>
+          <p>From this insight, Boyd formalized the <strong>OODA Loop</strong> — <em>Observe, Orient, Decide, Act</em> — a continuous decision cycle that explained why agile forces consistently defeated larger, better-equipped opponents.</p>
+        </div>
+
+        <div class="boyd-stats">
+          <div class="boyd-stat">
+            <div class="boyd-stat-number">40 sec</div>
+            <div class="boyd-stat-label">Boyd's standing bet to defeat any pilot</div>
+          </div>
+          <div class="boyd-stat">
+            <div class="boyd-stat-number">10:1</div>
+            <div class="boyd-stat-label">Reported F-86 kill ratio over MiG-15s in Korea</div>
+          </div>
+          <div class="boyd-stat">
+            <div class="boyd-stat-number">113 vs 37</div>
+            <div class="boyd-stat-label">Honda products vs. Yamaha using OODA tempo (18 months)</div>
+          </div>
+        </div>
+
+        <div class="boyd-section">
+          <div class="boyd-label">From Dogfight to Doctrine</div>
+          <p>Boyd's framework transcended the cockpit. Strategist Colin Gray called the OODA Loop a grand theory with "elegant simplicity and an extensive domain of applicability." The U.S. Marine Corps built their warfighting doctrine around it. Jamie Dimon, CEO of JPMorgan Chase, has cited it as his framework for scenario evaluation. It's been adopted across business strategy, agile software development, cybersecurity, and crisis management.</p>
+          <p>The core principle is deceptively simple: the entity that cycles through observation, orientation, decision, and action <em>faster and more accurately</em> than its opponent creates confusion, paralysis, and ultimately defeat on the other side — not through brute force, but through tempo.</p>
+        </div>
+
+        <div class="boyd-section">
+          <div class="boyd-label">ARCS — Adapted for Creative Production</div>
+          <p>Boyd's OODA was built for combat — binary outcomes, life or death. The modern creative marketplace isn't a dogfight, but the tempo principle holds. Your competitors aren't enemy pilots — they're market noise, misaligned strategy, wasted budget, and the slow decay of doing nothing.</p>
+          <p>The <strong>ARCS</strong> framework takes Boyd's core insight — <em>cycle faster, stay oriented, outmaneuver</em> — and reshapes it for creative production:</p>
+          <div class="arcs-comparison">
+            <div class="arcs-row">
+              <span class="arcs-ooda">Observe</span>
+              <span class="arcs-arrow">→</span>
+              <span class="arcs-ours"><strong>Analyze</strong> — Research the landscape, the client, the audience. See the full field before committing.</span>
+            </div>
+            <div class="arcs-row">
+              <span class="arcs-ooda">Orient</span>
+              <span class="arcs-arrow">→</span>
+              <span class="arcs-ours"><strong>Refine</strong> — Filter observation into intent, measurability, feasibility. This is Boyd's "Big O" — the step most people skip.</span>
+            </div>
+            <div class="arcs-row">
+              <span class="arcs-ooda">Decide</span>
+              <span class="arcs-arrow">→</span>
+              <span class="arcs-ours"><strong>Craft</strong> — Build the story, the pitch, the prototype. In creative work, the decision <em>is</em> the making.</span>
+            </div>
+            <div class="arcs-row">
+              <span class="arcs-ooda">Act</span>
+              <span class="arcs-arrow">→</span>
+              <span class="arcs-ours"><strong>Steer</strong> — Execute, measure, adjust. Then loop back to Analyze. The arc never ends.</span>
+            </div>
+          </div>
+          <p class="boyd-closing">The difference between a good creative team and a great one isn't talent — it's tempo. ARCS is how we maintain it.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-section">
+  <div class="section-inner reveal">
+    <div class="clients-row">
+      <span>Apple</span>
+      <span>Netflix</span>
+      <span>Amazon Studios</span>
+      <span>Disney</span>
+      <span>Sony</span>
+      <span>Warner Bros.</span>
+      <span>NBC Universal</span>
+      <span>EA</span>
+      <span>FOX</span>
+      <span>STARZ</span>
+      <span>Taco Bell</span>
+      <span>L'Oréal</span>
+      <span>A&amp;E</span>
+      <span>ILM xLAB</span>
+      <span>Booksy</span>
+      <span>Pura</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner reveal">
+    <div class="section-label">About</div>
+    <div class="section-title">Built on the Set. Refined in the Boardroom.</div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>Intrepid Media is a creative production consultancy founded by Jonathan Bruno — a filmmaker and creative strategist with 17+ years across Hollywood, Silicon Valley, and the brand world.</p>
+        <p>We started on set. Feature films, AAA game cinematics, VR experiences, and national commercials built the foundation. Eight years at Apple — leading video production and creative direction for the global sales organization — sharpened the strategic edge. That combination of cinematic craft and business fluency is what we bring to every engagement.</p>
+        <p>We work with brands, agencies, and internal creative teams who need a partner that understands both the story and the spreadsheet.</p>
+      </div>
+
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="number">17+</span>
+          <span class="label">Years in Production</span>
+        </div>
+        <div class="about-stat">
+          <span class="number">8</span>
+          <span class="label">Years at Apple</span>
+        </div>
+        <div class="about-stat">
+          <span class="number">30+</span>
+          <span class="label">Major Productions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner reveal">
+    <div class="section-label">Let's Work Together</div>
+    <div class="section-title">Get in Touch</div>
+    <p class="contact-subtitle">Ready to start a project? We'd love to hear what you're building.</p>
+
+    <div class="contact-info">
+      <a href="mailto:hello@intrepidmedia.co">hello@intrepidmedia.co</a>
+    </div>
+    <!-- 
+      EMAIL SETUP: Cloudflare Email Routing (free)
+      
+      1. Cloudflare dashboard → intrepidmedia.co → Email → Email Routing
+      2. Click "Get started" or "Enable Email Routing"
+      3. Cloudflare will auto-add the required MX and TXT records — approve them
+      4. Under "Custom addresses" → Create address:
+         - Custom address: hello
+         - Destination: jbrunofilm@icloud.com (or whatever personal email)
+         - Save
+      5. Cloudflare sends a verification email to your personal address — click confirm
+      6. Done. hello@intrepidmedia.co now forwards to your inbox.
+      
+      Optional: Add a catch-all rule so ANY @intrepidmedia.co address forwards to you
+         - Email Routing → Routing Rules → Catch-all → Edit → Forward to your email
+      
+      To SEND as hello@intrepidmedia.co from Gmail:
+         1. Gmail → Settings → Accounts → "Send mail as" → Add another email
+         2. Enter: hello@intrepidmedia.co
+         3. SMTP server: smtp.gmail.com (use your Gmail credentials)
+         4. Verify the confirmation email
+         5. Now you can send FROM hello@intrepidmedia.co through Gmail
+      
+      Later upgrade: Google Workspace ($7/mo) for a full inbox at @intrepidmedia.co
+    -->
+  </div>
+</section>
+
+<!-- FAQ — optimized for AI Overview extraction -->
+<section class="faq-section" id="faq">
+  <div class="section-inner reveal">
+    <div class="section-label">Frequently Asked</div>
+    <div class="section-title">Common Questions</div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What does Intrepid Media do?</summary>
+        <p>Intrepid Media is a creative production consultancy that helps companies develop and execute video content strategy. We specialize in creative direction, video production, marketing strategy alignment, and post-production — working with brands, agencies, and internal teams to build stories that drive measurable business outcomes.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Who founded Intrepid Media?</summary>
+        <p>Intrepid Media was founded by Jonathan Bruno, a creative director and filmmaker with over 17 years of experience across Hollywood, Silicon Valley, and the brand world. He spent 8 years at Apple leading video production and creative direction for the global sales organization before founding the consultancy.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What kind of companies does Intrepid Media work with?</summary>
+        <p>We work with technology companies, consumer brands, startups, and agencies. Past and current clients include Apple, Taco Bell, Booksy, Pura, L'Oréal, and Warner Bros. We're equally comfortable producing a brand film for a startup or managing enterprise-scale video production for a Fortune 500 company.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Where is Intrepid Media based?</summary>
+        <p>Intrepid Media is based in the San Francisco Bay Area, California. We work with clients nationally and have produced content across the United States and internationally.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is the creative development process?</summary>
+        <p>Every project follows our ARCS framework, adapted from Col. John Boyd's OODA Loop: Analyze (research the business need and landscape), Refine (filter into intent, measurability, and feasibility), Craft (create pitches, mockups, and pre-visualizations), and Steer (determine execution approach, align resources, and loop back). This process was refined over 17 years of production work across entertainment, tech, and brand storytelling.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What types of video content does Intrepid Media produce?</summary>
+        <p>We produce branded documentaries, product launch videos, customer story films, brand vision films, sales driving content, broadcast commercials, and internal communications video. Our background spans feature films, AAA game cinematics, VR experiences, and national broadcast — so we bring cinematic craft to every project regardless of scale.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Intrepid Media LLC. All rights reserved.</p>
+</footer>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Intrepid Media LLC",
+  "alternateName": "Intrepid Media",
+  "url": "https://intrepidmedia.co",
+  "description": "Creative production consultancy specializing in video strategy, creative direction, brand storytelling, and end-to-end video production for technology companies, consumer brands, and agencies.",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Jonathan Bruno",
+    "jobTitle": "Creative Director & Founder",
+    "description": "Creative director and filmmaker with 17+ years across Hollywood, Apple, and the brand world.",
+    "sameAs": ["https://jonathan-bruno.com"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": ["Creative Direction", "Video Production", "Marketing Strategy", "Post-Production", "Brand Storytelling"],
+  "knowsAbout": ["Video Production", "Creative Direction", "Brand Strategy", "Post-Production", "Color Grading", "Motion Graphics", "Documentary Film", "Commercial Production"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Creative Production Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Creative Direction", "description": "Translating business goals into creative strategy — concepts, scripts, and visual frameworks aligned with measurable outcomes."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Production", "description": "End-to-end video production from pre-production through delivery. Branded content, customer stories, product launches, and broadcast."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing Strategy Alignment", "description": "Working upstream with marketing and sales teams to identify where creative drives measurable business impact."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Post-Production & Delivery", "description": "Editorial, color grading, motion graphics, sound design, and final QC through in-house and vetted vendor networks."}}
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Intrepid Media do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intrepid Media is a creative production consultancy that helps companies develop and execute video content strategy. We specialize in creative direction, video production, marketing strategy alignment, and post-production."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded Intrepid Media?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intrepid Media was founded by Jonathan Bruno, a creative director and filmmaker with over 17 years of experience across Hollywood, Silicon Valley, and the brand world. He spent 8 years at Apple leading video production and creative direction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of companies does Intrepid Media work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with technology companies, consumer brands, startups, and agencies. Past and current clients include Apple, Taco Bell, Booksy, Pura, L'Oréal, and Warner Bros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Intrepid Media based?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intrepid Media is based in the San Francisco Bay Area, California. We work with clients nationally and internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the creative development process?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project follows the ARCS framework, adapted from Col. John Boyd's OODA Loop: Analyze (research the business need and landscape), Refine (filter into intent, measurability, feasibility), Craft (create pitches, mockups, pre-visualizations), and Steer (determine execution and align resources, then loop back)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of video content does Intrepid Media produce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Branded documentaries, product launch videos, customer stories, brand vision films, sales enablement content, broadcast commercials, and internal communications video."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile hamburger
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+    });
+  });
+
+  // Rotating hero word
+  const words = ['business.', 'product.', 'brand.', 'idea.'];
+  let currentIndex = 0;
+  const rotatingWord = document.getElementById('rotatingWord');
+
+  function rotateWord() {
+    const inner = rotatingWord.querySelector('.word-inner');
+    inner.classList.add('word-exit');
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % words.length;
+      inner.textContent = words[currentIndex];
+      inner.classList.remove('word-exit');
+      inner.classList.add('word-enter');
+
+      setTimeout(() => {
+        inner.classList.remove('word-enter');
+      }, 600);
+    }, 600);
+  }
+
+  setInterval(rotateWord, 3000);
+
+  // Scroll reveal — content visible by default, animation is progressive enhancement
+  if ('IntersectionObserver' in window) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('will-animate'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+</script>
+</body>
+</html>
