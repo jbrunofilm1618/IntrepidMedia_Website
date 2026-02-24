@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Intrepid Media — Invoice IM-2026-003</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1B2D'/%3E%3Ctext x='2' y='24' font-family='Georgia,serif' font-size='22' font-weight='900' font-style='italic' fill='%23E09F1F'%3EI%3C/text%3E%3Ctext x='12' y='24' font-family='Georgia,serif' font-size='22' font-weight='900' font-style='italic' fill='%23F1F5F9'%3EM%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg:#0F1B2D; --bg-dark:#0A1220; --bg-slate:#162032;
+    --text:#F1F5F9; --text-sec:#94A3B8;
+    --blue:#60A5FA; --gold:#E09F1F;
+    --border:rgba(241,245,249,0.1);
+    --display:'Cormorant Garamond',Georgia,serif;
+    --body:'Lora',Georgia,serif;
+    --ui:'Outfit',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--body);background:var(--bg-dark);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--blue);color:#fff}
+
+  .top-bar{background:var(--bg);border-bottom:2px solid var(--gold);padding:16px 40px;display:flex;justify-content:center}
+  .nav-brand{text-decoration:none}
+  .wrap{max-width:580px;margin:0 auto;padding:0 20px 24px}
+
+  /* QR Hero */
+  .pay-hero{background:var(--bg);border:1px solid var(--border);border-radius:10px;margin:28px 0 18px;padding:28px 24px;text-align:center}
+  .pay-hero h2{font-family:var(--display);font-size:1.35rem;font-weight:600;margin-bottom:4px}
+  .pay-hero .sub{font-family:var(--ui);font-size:0.8rem;color:var(--text-sec);margin-bottom:16px}
+  .qr-box{display:inline-block;padding:12px;background:#fff;border-radius:10px;margin-bottom:10px}
+  .qr-box img{display:block;width:140px;height:140px;image-rendering:pixelated}
+  .pay-entity{font-family:var(--ui);font-size:0.85rem;font-weight:600;margin-top:6px}
+  .pay-email{font-family:var(--ui);font-size:0.78rem;color:var(--text-sec);margin-top:1px}
+  .memo{margin-top:10px;font-family:var(--ui);font-size:0.7rem;color:var(--text-sec);background:var(--bg-slate);padding:6px 12px;border-radius:6px;border:1px dashed rgba(241,245,249,0.1);display:inline-block}
+  .memo strong{color:var(--gold)}
+
+  /* Due line */
+  .due-line{display:flex;justify-content:space-between;align-items:center;background:rgba(96,165,250,0.08);border:1px solid rgba(96,165,250,0.2);border-radius:10px;padding:14px 20px;margin-bottom:18px}
+  .due-line .label{font-family:var(--ui);font-size:0.85rem;font-weight:600}
+  .due-line .note{font-family:var(--ui);font-size:0.7rem;color:var(--text-sec);margin-top:1px}
+  .due-line .amt{font-family:var(--display);font-size:1.5rem;font-weight:700}
+  .due-badge{font-family:var(--ui);font-size:0.55rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:4px;background:var(--gold);color:var(--bg-dark);margin-left:8px}
+
+  /* Card */
+  .card{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:18px}
+  .card-head{padding:20px 24px 16px;border-bottom:2px solid var(--gold);background:linear-gradient(135deg,var(--bg-dark),var(--bg-slate))}
+  .card-head .tag{font-family:var(--ui);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+  .card-head h1{font-family:var(--display);font-size:1.4rem;font-weight:600;line-height:1.2}
+  .card-body{padding:20px 24px}
+  .sec-label{font-family:var(--ui);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+
+  /* Items */
+  .items{margin-bottom:20px}
+  .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);gap:12px}
+  .row:last-child{border-bottom:none}
+  .row .d{font-size:0.82rem;flex:1;line-height:1.4}
+  .row .p{font-family:var(--ui);font-size:0.82rem;font-weight:600;white-space:nowrap}
+  .row.disc .d,.row.disc .p{color:var(--text-sec);font-style:italic}
+  .row.disc .p{text-decoration:line-through}
+  .row.total{border-top:2px solid var(--gold);border-bottom:none;padding-top:10px;margin-top:2px}
+  .row.total .d{font-family:var(--ui);font-weight:700}
+  .row.total .p{font-size:1rem;font-weight:700;color:var(--gold)}
+
+  /* Terms */
+  .terms{margin-bottom:0}
+  .term{font-size:0.8rem;color:var(--text-sec);line-height:1.55;padding:5px 0;border-bottom:1px solid var(--border)}
+  .term:last-child{border-bottom:none}
+  .term strong{font-family:var(--ui);font-weight:600;color:var(--text);font-size:0.75rem}
+
+  /* Signature */
+  .sig-section{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:18px}
+  .sig-section .sec-label{margin-bottom:12px}
+  .sig-canvas-wrap{position:relative;background:#fff;border-radius:8px;overflow:hidden;margin-bottom:10px;touch-action:none}
+  .sig-canvas-wrap canvas{display:block;width:100%;cursor:crosshair}
+  .sig-placeholder{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--ui);font-size:0.8rem;color:#ccc;pointer-events:none;transition:opacity 0.3s}
+  .sig-placeholder.hidden{opacity:0}
+  .sig-line{position:absolute;bottom:28px;left:16px;right:16px;height:1px;background:#ddd;pointer-events:none}
+  .sig-x{position:absolute;bottom:22px;left:10px;font-family:var(--ui);font-size:0.75rem;color:#bbb;pointer-events:none}
+  .sig-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .sig-btn{font-family:var(--ui);font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:8px 18px;border-radius:6px;border:none;cursor:pointer;transition:all 0.2s}
+  .sig-btn.clear{background:transparent;border:1px solid var(--border);color:var(--text-sec)}
+  .sig-btn.clear:hover{border-color:rgba(241,245,249,0.3);color:var(--text)}
+  .sig-btn.accept{background:var(--gold);color:var(--bg-dark)}
+  .sig-btn.accept:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .sig-btn:disabled{opacity:0.4;cursor:default;transform:none;filter:none}
+  .sig-timestamp{font-family:var(--ui);font-size:0.7rem;color:var(--text-sec);margin-left:auto}
+  .sig-accepted{font-family:var(--ui);font-size:0.78rem;color:#4ade80;font-weight:600;display:flex;align-items:center;gap:6px}
+
+  /* Meta */
+  .meta{display:flex;gap:16px;flex-wrap:wrap;padding:14px 0 0;border-top:1px solid var(--border)}
+  .meta-item{flex:1;min-width:100px}
+  .meta-item .ml{font-family:var(--ui);font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-sec);margin-bottom:1px}
+  .meta-item .mv{font-family:var(--ui);font-size:0.75rem;font-weight:500}
+
+  .foot{text-align:center;padding:14px;font-family:var(--ui);font-size:0.68rem;color:var(--text-sec);border-top:1px solid var(--border)}
+  .foot a{color:var(--gold);text-decoration:none}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .pay-hero{animation:fadeUp .4s ease-out .1s both}
+  .due-line{animation:fadeUp .4s ease-out .15s both}
+  .card{animation:fadeUp .4s ease-out .2s both}
+  .sig-section{animation:fadeUp .4s ease-out .25s both}
+
+  @media(max-width:480px){
+    .top-bar{padding:14px 20px}.pay-hero{padding:22px 18px}
+    .card-head,.card-body{padding:18px}.sig-section{padding:18px}
+    .due-line{flex-direction:column;gap:6px;text-align:center}
+    .meta{flex-direction:column;gap:10px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="https://intrepidmedia.co" class="nav-brand">
+    <svg width="180" height="32" viewBox="0 0 360 110">
+      <text x="34" y="92" font-family="'Playfair Display',serif" font-size="110" font-weight="900" fill="#E09F1F" font-style="italic">I</text>
+      <text x="52" y="92" font-family="'Playfair Display',serif" font-size="110" font-weight="900" fill="#F1F5F9" font-style="italic">M</text>
+      <text x="168" y="62" font-family="'Outfit',sans-serif" font-size="22" font-weight="600" fill="#F1F5F9" letter-spacing="3">INTREPID</text>
+      <text x="168" y="86" font-family="'Outfit',sans-serif" font-size="22" font-weight="300" fill="rgba(241,245,249,0.5)" letter-spacing="3">MEDIA</text>
+    </svg>
+  </a>
+</div>
+
+<div class="wrap">
+
+  <div class="pay-hero">
+    <h2>Pay via Zelle®</h2>
+    <p class="sub">Scan the QR code or send to the email below.</p>
+    <div class="qr-box">
+      <img src="data:image/png;base64,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" alt="Zelle QR Code">
+    </div>
+    <div class="pay-entity">INTREPID MEDIA LLC</div>
+    <div class="pay-email">j***m@icloud.com</div>
+    <div class="memo">Include invoice <strong>IM-2026-003</strong> in the memo.</div>
+  </div>
+
+  <div class="due-line">
+    <div><div class="label">Deposit — 50%</div><div class="note">Due now to commence post-production</div></div>
+    <div style="display:flex;align-items:center"><span class="amt">$2,675</span><span class="due-badge">Due Now</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="tag">Invoice IM-2026-003</div>
+      <h1>Familia Grove — Brand Film Package</h1>
+    </div>
+    <div class="card-body">
+      <div class="sec-label">Deliverables</div>
+      <div class="items">
+        <div class="row"><div class="d">Creative development, story design, planning</div><div class="p">$900</div></div>
+        <div class="row"><div class="d">5.5-hour production — Director + RED Komodo, audio, lighting</div><div class="p">$1,600</div></div>
+        <div class="row"><div class="d">Brand film post-production — assistant editor, color, titles, polish</div><div class="p">$2,500</div></div>
+        <div class="row"><div class="d">Music licensing</div><div class="p">$350</div></div>
+        <div class="row"><div class="d">4 social media cutdowns (:15–:30)</div><div class="p">$1,200</div></div>
+        <div class="row disc"><div class="d">Total value</div><div class="p">$6,550</div></div>
+        <div class="row total"><div class="d">Introductory Package Rate</div><div class="p">$5,350</div></div>
+      </div>
+
+      <div class="sec-label">Terms & Assumptions</div>
+      <div class="terms">
+        <div class="term"><strong>Agreement.</strong> This document serves as the binding agreement between Familia Grove and Intrepid Media LLC upon receipt of the deposit.</div>
+        <div class="term"><strong>Deposit.</strong> 50% ($2,675) is required to commence post-production. Production has been completed.</div>
+        <div class="term"><strong>Final Payment.</strong> The remaining 50% ($2,675) is due upon delivery of finished assets.</div>
+        <div class="term"><strong>Timeline.</strong> Estimated delivery is 3–4 weeks from production date, subject to client feedback turnaround. Intrepid Media will make every effort to deliver early and be ready for quick revisions.</div>
+        <div class="term"><strong>Revisions.</strong> Two rounds of revisions are included.</div>
+        <div class="term"><strong>Usage Rights.</strong> Both parties retain the right to use finished assets for marketing purposes.</div>
+        <div class="term"><strong>Cancellation.</strong> If cancelled after deposit, the deposit is non-refundable. If cancelled after the production day, the full project fee is due.</div>
+      </div>
+
+      <div class="meta">
+        <div class="meta-item"><div class="ml">Date</div><div class="mv">February 23, 2026</div></div>
+        <div class="meta-item"><div class="ml">Prepared By</div><div class="mv">Jonathan Bruno</div></div>
+        <div class="meta-item"><div class="ml">Status</div><div class="mv" style="color:var(--gold);font-weight:700">Awaiting Deposit</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE PAD -->
+  <div class="sig-section" id="sigSection">
+    <div class="sec-label">Client Acceptance</div>
+    <div class="sig-canvas-wrap" id="sigWrap">
+      <canvas id="sigCanvas" height="140"></canvas>
+      <div class="sig-line"></div>
+      <div class="sig-x">✕</div>
+      <div class="sig-placeholder" id="sigPlaceholder">Sign here</div>
+    </div>
+    <div class="sig-actions" id="sigActions">
+      <button class="sig-btn clear" id="sigClear" type="button">Clear</button>
+      <button class="sig-btn accept" id="sigAccept" type="button" disabled>Accept & Sign</button>
+      <span class="sig-timestamp" id="sigTimestamp"></span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <strong>Intrepid Media LLC</strong> · <a href="mailto:hello@intrepidmedia.co">hello@intrepidmedia.co</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('sigCanvas');
+  const ctx = canvas.getContext('2d');
+  const wrap = document.getElementById('sigWrap');
+  const placeholder = document.getElementById('sigPlaceholder');
+  const clearBtn = document.getElementById('sigClear');
+  const acceptBtn = document.getElementById('sigAccept');
+  const tsSpan = document.getElementById('sigTimestamp');
+  let drawing = false, hasDrawn = false, accepted = false;
+
+  function resize() {
+    const rect = wrap.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = 140 * dpr;
+    canvas.style.height = '140px';
+    ctx.scale(dpr, dpr);
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#1E293B';
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const t = e.touches ? e.touches[0] : e;
+    return { x: t.clientX - rect.left, y: t.clientY - rect.top };
+  }
+
+  function start(e) {
+    if (accepted) return;
+    e.preventDefault();
+    drawing = true;
+    const p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    if (!hasDrawn) {
+      hasDrawn = true;
+      placeholder.classList.add('hidden');
+      acceptBtn.disabled = false;
+    }
+  }
+  function move(e) {
+    if (!drawing || accepted) return;
+    e.preventDefault();
+    const p = getPos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  }
+  function end() { drawing = false; }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  canvas.addEventListener('mouseup', end);
+  canvas.addEventListener('mouseleave', end);
+  canvas.addEventListener('touchstart', start, { passive: false });
+  canvas.addEventListener('touchmove', move, { passive: false });
+  canvas.addEventListener('touchend', end);
+
+  clearBtn.addEventListener('click', function() {
+    if (accepted) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hasDrawn = false;
+    acceptBtn.disabled = true;
+    placeholder.classList.remove('hidden');
+  });
+
+  acceptBtn.addEventListener('click', function() {
+    if (!hasDrawn || accepted) return;
+    accepted = true;
+    canvas.style.opacity = '1';
+    clearBtn.disabled = true;
+    acceptBtn.disabled = true;
+    const now = new Date();
+    const ts = now.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' })
+      + ' at ' + now.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
+    tsSpan.innerHTML = '<span class="sig-accepted">✓ Signed</span>&nbsp;&nbsp;' + ts;
+  });
+})();
+</script>
+</body>
+</html>
