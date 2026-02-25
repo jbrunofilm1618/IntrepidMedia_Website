@@ -1352,29 +1352,34 @@
     <div class="contact-info">
       <a href="mailto:hello@intrepidmedia.co">hello@intrepidmedia.co</a>
     </div>
-    <!-- 
+    <!--
       EMAIL SETUP: Cloudflare Email Routing (free)
-      
+
+      Active addresses:
+        - hello@intrepidmedia.co      → jbrunofilm@icloud.com (general inquiries)
+        - jonathan@intrepidmedia.co   → jbrunofilm@icloud.com (personal / direct)
+        - jon@intrepidmedia.co        → jbrunofilm@icloud.com (personal / direct)
+
+      To add or manage addresses:
       1. Cloudflare dashboard → intrepidmedia.co → Email → Email Routing
-      2. Click "Get started" or "Enable Email Routing"
-      3. Cloudflare will auto-add the required MX and TXT records — approve them
-      4. Under "Custom addresses" → Create address:
-         - Custom address: hello
+      2. Under "Custom addresses" → Create address:
+         - Custom address: hello | jonathan | jon
          - Destination: jbrunofilm@icloud.com (or whatever personal email)
          - Save
-      5. Cloudflare sends a verification email to your personal address — click confirm
-      6. Done. hello@intrepidmedia.co now forwards to your inbox.
-      
+      3. Cloudflare sends a verification email to your personal address — click confirm
+      4. Done. That address now forwards to your inbox.
+
       Optional: Add a catch-all rule so ANY @intrepidmedia.co address forwards to you
          - Email Routing → Routing Rules → Catch-all → Edit → Forward to your email
-      
-      To SEND as hello@intrepidmedia.co from Gmail:
+
+      To SEND as jonathan@intrepidmedia.co (or any alias) from Gmail:
          1. Gmail → Settings → Accounts → "Send mail as" → Add another email
-         2. Enter: hello@intrepidmedia.co
+         2. Enter: jonathan@intrepidmedia.co
          3. SMTP server: smtp.gmail.com (use your Gmail credentials)
          4. Verify the confirmation email
-         5. Now you can send FROM hello@intrepidmedia.co through Gmail
-      
+         5. Now you can send FROM jonathan@intrepidmedia.co through Gmail
+         6. Repeat for jon@ or hello@ if needed
+
       Later upgrade: Google Workspace ($7/mo) for a full inbox at @intrepidmedia.co
     -->
   </div>
