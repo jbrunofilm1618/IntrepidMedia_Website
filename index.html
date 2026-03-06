@@ -531,6 +531,172 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     line-height: 1.65;
   }
 
+  /* Sub-project names */
+  .sub-project-names {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--color-gold);
+    margin-top: 14px;
+    opacity: 0.85;
+  }
+
+  /* VIEW WORK toggle */
+  .work-toggle {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+  }
+  .work-toggle:hover { opacity: 1; }
+  .toggle-arrow {
+    font-size: 0.55rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  .work-card.expanded .toggle-arrow {
+    transform: rotate(90deg);
+  }
+
+  /* Expanded card */
+  .work-card.expanded {
+    grid-column: 1 / -1;
+    border-color: rgba(96, 165, 250, 0.25);
+  }
+  .work-card.expanded:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Expanded content area */
+  .work-card-expanded {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease 0.1s;
+  }
+  .work-card.expanded .work-card-expanded {
+    max-height: 900px;
+    opacity: 1;
+  }
+
+  .work-divider {
+    border: none;
+    border-top: 1px solid rgba(241, 245, 249, 0.08);
+    margin: 24px 0;
+  }
+
+  /* Tabs */
+  .work-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .work-tab {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(241, 245, 249, 0.12);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .work-tab:hover {
+    border-color: rgba(96, 165, 250, 0.4);
+    color: var(--color-text);
+  }
+  .work-tab.active {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: #fff;
+  }
+
+  /* Sub-project title */
+  .work-subproject-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 16px;
+  }
+
+  /* Video container — 16:9, larger than typical */
+  .work-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1060px;
+    padding-bottom: min(56.25%, 597px);
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #0A1220;
+    margin-bottom: 8px;
+  }
+  .work-video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Password protected / special badges */
+  .work-protected-badge {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.6;
+  }
+
+  /* Request Access (Pura) */
+  .work-request-btn {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    background: none;
+    border: 1px solid var(--color-gold);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .work-request-btn:hover {
+    background: var(--color-gold);
+    color: #0F1B2D;
+  }
+
   /* ============ APPROACH ============ */
   .approach-section {
     background: var(--color-bg-dark);
@@ -971,6 +1137,9 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
 
     .services-grid { grid-template-columns: 1fr; }
     .work-grid { grid-template-columns: 1fr; }
+    .work-video-container { max-width: 100%; }
+    .work-tabs { gap: 6px; }
+    .work-tab { font-size: 0.68rem; padding: 6px 14px; }
     .approach-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
     .approach-connector { display: none; }
     .about-content { grid-template-columns: 1fr; gap: 40px; }
@@ -1004,6 +1173,14 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
 
     .service-card { padding: 28px 24px; }
     .work-card { padding: 28px 24px; }
+    .work-tabs {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .work-tabs::-webkit-scrollbar { display: none; }
+    .work-tab { flex-shrink: 0; }
     .boyd-stats { grid-template-columns: 1fr; gap: 20px; }
     .arcs-row { flex-direction: column; gap: 4px; }
     .arcs-ooda { min-width: auto; }
@@ -1152,41 +1329,99 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     <div class="section-title">Clients & Projects</div>
 
     <div class="work-grid">
-      <div class="work-card">
-        <div class="project-type">Branded Documentary</div>
-        <div class="client-name">Booksy</div>
-        <p>Three-part branded documentary series profiling stylists and barbers who built their businesses on the Booksy platform. Produced in partnership with Unknown Certainty.</p>
+
+      <!-- Booksy -->
+      <div class="work-card" data-project="booksy">
+        <div class="work-card-header">
+          <div class="project-type">Branded Documentary</div>
+          <div class="client-name">Booksy — "Self-Made" Series</div>
+          <p>Three branded documentary spots produced in partnership with Unknown Certainty, highlighting stylists and barbers who built their businesses from the ground up — and now run them entirely on Booksy.</p>
+          <div class="sub-project-names">Nas · Yashira · Taylor</div>
+          <button class="work-toggle" aria-expanded="false">VIEW WORK <span class="toggle-arrow">&#9654;</span></button>
+        </div>
+        <div class="work-card-expanded" aria-hidden="true">
+          <hr class="work-divider">
+          <div class="work-tabs" role="tablist"></div>
+          <h4 class="work-subproject-title"></h4>
+          <div class="work-video-container"></div>
+        </div>
       </div>
 
-      <div class="work-card">
-        <div class="project-type">Launch Campaign</div>
-        <div class="client-name">Yoshi Mobility</div>
-        <p>Launch video campaign for the Bay Area mobility company providing on-demand vehicle fueling, fleet services, and mobile EV charging.</p>
+      <!-- Yoshi Mobility -->
+      <div class="work-card" data-project="yoshi">
+        <div class="work-card-header">
+          <div class="project-type">Launch Campaign</div>
+          <div class="client-name">Yoshi Mobility — Launch Campaign</div>
+          <p>Launch video campaign for the Bay Area mobility company providing on-the-spot vehicle fueling, fleet support, and mobile EV charging.</p>
+          <div class="sub-project-names">Yoshi Growth · Yoshi Mobility</div>
+          <button class="work-toggle" aria-expanded="false">VIEW WORK <span class="toggle-arrow">&#9654;</span></button>
+        </div>
+        <div class="work-card-expanded" aria-hidden="true">
+          <hr class="work-divider">
+          <div class="work-tabs" role="tablist"></div>
+          <h4 class="work-subproject-title"></h4>
+          <div class="work-video-container"></div>
+        </div>
       </div>
 
-      <div class="work-card">
-        <div class="project-type">Broadcast Spots</div>
-        <div class="client-name">Taco Bell</div>
-        <p>Creative consulting across a run of nationally televised spots, beginning with a brand partnership featuring NFL player Davante Adams and expanding into ongoing collaboration.</p>
+      <!-- Taco Bell -->
+      <div class="work-card" data-project="tacobell">
+        <div class="work-card-header">
+          <div class="project-type">Broadcast Spots</div>
+          <div class="client-name">Taco Bell — Broadcast Spots</div>
+          <p>Initially brought on as a lighting consultant for a brand partnership with NFL player Davante Adams. The success of the collaboration expanded into a creative consulting role across a run of nationally televised spots.</p>
+          <div class="sub-project-names">Davante Adams Partnership · Two Dollar Nachos · Trio Cravings · Stackers Maker Fair · Churro Chillers · Low Riders</div>
+          <button class="work-toggle" aria-expanded="false">VIEW WORK <span class="toggle-arrow">&#9654;</span></button>
+        </div>
+        <div class="work-card-expanded" aria-hidden="true">
+          <hr class="work-divider">
+          <div class="work-tabs" role="tablist"></div>
+          <h4 class="work-subproject-title"></h4>
+          <div class="work-video-container"></div>
+        </div>
       </div>
 
-      <div class="work-card">
-        <div class="project-type">Brand Vision Film</div>
-        <div class="client-name">Pura</div>
-        <p>Internal brand vision film for the tech-forward fragrance company — producing proofs of concept for future product lines and applications.</p>
+      <!-- Pura (Request Access) -->
+      <div class="work-card" data-project="pura">
+        <div class="work-card-header">
+          <div class="project-type">Brand Vision Film</div>
+          <div class="client-name">Pura — Brand Vision Film</div>
+          <p>Internal future-thinking brand vision film for the tech-forward fragrance company. Produced proofs of concept for future product lines and applications.</p>
+          <div class="work-protected-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Password Protected
+          </div>
+          <a class="work-request-btn" href="mailto:hello@intrepidmedia.co?subject=Request%20Access%3A%20Pura%20Brand%20Vision%20Film&body=Hi%2C%20I%E2%80%99d%20like%20to%20request%20access%20to%20the%20Pura%20brand%20vision%20film.%0A%0AName%3A%20%0ACompany%3A%20">REQUEST ACCESS</a>
+        </div>
       </div>
 
-      <div class="work-card">
-        <div class="project-type">Brand Film</div>
-        <div class="client-name">Familia Grove</div>
-        <p>Premium olive oil brand film capturing the heritage, craft, and family story behind a multi-generational grove in the heart of California.</p>
+      <!-- Familia Grove -->
+      <div class="work-card" data-project="familiagrove">
+        <div class="work-card-header">
+          <div class="project-type">Brand Film</div>
+          <div class="client-name">Familia Grove — Brand Film</div>
+          <p>Premium olive oil brand film capturing the heritage, craft, and family story behind a multi-generational grove in the heart of California.</p>
+          <div class="sub-project-names">Familia Grove</div>
+          <button class="work-toggle" aria-expanded="false">VIEW WORK <span class="toggle-arrow">&#9654;</span></button>
+        </div>
+        <div class="work-card-expanded" aria-hidden="true">
+          <hr class="work-divider">
+          <div class="work-tabs" role="tablist"></div>
+          <h4 class="work-subproject-title"></h4>
+          <div class="work-video-container"></div>
+        </div>
       </div>
 
-      <div class="work-card">
-        <div class="project-type">Enterprise Creative</div>
-        <div class="client-name">Apple</div>
-        <p>8 years of video production and creative direction for Apple's global sales organization — building content that energized enterprise teams and informed product strategy.</p>
+      <!-- Apple (Content Coming Soon) -->
+      <div class="work-card" data-project="apple">
+        <div class="work-card-header">
+          <div class="project-type">Enterprise Creative</div>
+          <div class="client-name">Apple — Enterprise Creative</div>
+          <p>8 years of video production and creative direction for Apple's global sales organization — building content that energized enterprise teams and informed product strategy.</p>
+          <div class="work-protected-badge">Content Coming Soon</div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1529,6 +1764,44 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
 </script>
 
 <script>
+  // =============================================
+  // VIDEO URLS — Edit Vimeo IDs here
+  // Replace 'PLACEHOLDER' with the numeric Vimeo ID from each video URL
+  // Example: https://vimeo.com/123456789 → vimeoId: '123456789'
+  // =============================================
+  const workData = {
+    booksy: {
+      subprojects: [
+        { id: 'nas',     label: 'Barber Nas',       vimeoId: 'PLACEHOLDER' },
+        { id: 'yashira', label: 'Yashira Hiraldo',  vimeoId: 'PLACEHOLDER' },
+        { id: 'taylor',  label: 'Taylor Leven',     vimeoId: 'PLACEHOLDER' }
+      ]
+    },
+    yoshi: {
+      subprojects: [
+        { id: 'yoshi-growth',   label: 'Yoshi Growth',   vimeoId: 'PLACEHOLDER' },
+        { id: 'yoshi-mobility', label: 'Yoshi Mobility',  vimeoId: 'PLACEHOLDER' }
+      ]
+    },
+    tacobell: {
+      subprojects: [
+        { id: 'davante',  label: 'Davante Adams Partnership', vimeoId: 'PLACEHOLDER' },
+        { id: 'nachos',   label: 'Two Dollar Nachos',         vimeoId: 'PLACEHOLDER' },
+        { id: 'trio',     label: 'Trio Cravings',             vimeoId: 'PLACEHOLDER' },
+        { id: 'stackers', label: 'Stackers Maker Fair',       vimeoId: 'PLACEHOLDER' },
+        { id: 'churro',   label: 'Churro Chillers',           vimeoId: 'PLACEHOLDER' },
+        { id: 'lowriders',label: 'Low Riders',                vimeoId: 'PLACEHOLDER' }
+      ]
+    },
+    pura: { requestAccess: true, subprojects: [] },
+    familiagrove: {
+      subprojects: [
+        { id: 'familia-brand', label: 'Familia Grove', vimeoId: 'PLACEHOLDER' }
+      ]
+    },
+    apple: { comingSoon: true, subprojects: [] }
+  };
+
   // Nav scroll effect
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -1584,6 +1857,77 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
+
+  // Expandable work cards
+  function openCard(card, projectKey) {
+    card.classList.add('expanded');
+    card.querySelector('.work-toggle').setAttribute('aria-expanded', 'true');
+    card.querySelector('.work-card-expanded').setAttribute('aria-hidden', 'false');
+    selectTab(card, projectKey, 0);
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 350);
+  }
+
+  function closeCard(card) {
+    card.classList.remove('expanded');
+    const toggle = card.querySelector('.work-toggle');
+    const expanded = card.querySelector('.work-card-expanded');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (expanded) expanded.setAttribute('aria-hidden', 'true');
+    const vc = card.querySelector('.work-video-container');
+    if (vc) vc.innerHTML = '';
+  }
+
+  function selectTab(card, projectKey, index) {
+    const data = workData[projectKey];
+    const sp = data.subprojects[index];
+    card.querySelectorAll('.work-tab').forEach((tab, i) => {
+      tab.classList.toggle('active', i === index);
+    });
+    card.querySelector('.work-subproject-title').textContent = sp.label;
+    const vc = card.querySelector('.work-video-container');
+    if (sp.vimeoId && sp.vimeoId !== 'PLACEHOLDER') {
+      vc.innerHTML = '<iframe src="https://player.vimeo.com/video/' + sp.vimeoId +
+        '?autoplay=0&title=0&byline=0&portrait=0&dnt=1" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="' +
+        sp.label + '"></iframe>';
+    } else {
+      vc.innerHTML = '<div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-family:var(--font-ui);font-size:0.9rem;">Video coming soon</div>';
+    }
+  }
+
+  // Initialize expandable cards
+  document.querySelectorAll('.work-card[data-project]').forEach(card => {
+    const projectKey = card.dataset.project;
+    const data = workData[projectKey];
+    if (!data || data.requestAccess || data.comingSoon || data.subprojects.length === 0) return;
+
+    const toggle = card.querySelector('.work-toggle');
+    const tabsContainer = card.querySelector('.work-tabs');
+
+    // Build tabs
+    data.subprojects.forEach((sp, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'work-tab' + (i === 0 ? ' active' : '');
+      btn.textContent = sp.label;
+      btn.setAttribute('role', 'tab');
+      btn.addEventListener('click', () => selectTab(card, projectKey, i));
+      tabsContainer.appendChild(btn);
+    });
+
+    // Toggle expand/collapse
+    toggle.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('expanded');
+      document.querySelectorAll('.work-card.expanded').forEach(other => {
+        if (other !== card) closeCard(other);
+      });
+      if (isExpanded) {
+        closeCard(card);
+      } else {
+        openCard(card, projectKey);
+      }
+    });
+  });
 </script>
 </body>
 </html>
