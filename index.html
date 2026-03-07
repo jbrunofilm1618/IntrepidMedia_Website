@@ -1938,7 +1938,7 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     const vc = card.querySelector('.work-video-container');
     if (sp.vimeoId && sp.vimeoId !== 'PLACEHOLDER') {
       var embedUrl = 'https://player.vimeo.com/video/' + sp.vimeoId +
-        '?autoplay=0&title=0&byline=0&portrait=0&dnt=1' + (sp.h ? '&h=' + sp.h : '');
+        '?autoplay=0&title=0&byline=0&portrait=0&badge=0&dnt=1' + (sp.h ? '&h=' + sp.h : '');
       vc.innerHTML = '<iframe src="' + embedUrl +
         '" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="' +
         sp.label + '"></iframe>';
