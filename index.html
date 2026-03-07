@@ -580,13 +580,6 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     box-shadow: none;
   }
 
-  @media (hover: none) {
-    .work-card:hover {
-      transform: none;
-      box-shadow: none;
-    }
-  }
-
   /* Expanded content area */
   .work-card-expanded {
     max-height: 0;
@@ -1145,7 +1138,7 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     .services-grid { grid-template-columns: 1fr; }
     .work-grid { grid-template-columns: 1fr; gap: 16px; }
     .work-card { padding: 28px 20px; }
-    .work-card.expanded { padding: 28px 16px; }
+    .work-card.expanded { padding: 28px 20px; }
     .work-card.expanded .work-card-expanded {
       max-height: 1200px;
     }
@@ -1162,7 +1155,7 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
       padding-bottom: 4px;
     }
     .work-tabs::-webkit-scrollbar { display: none; }
-    .work-tab { font-size: 0.65rem; padding: 7px 12px; flex-shrink: 0; white-space: nowrap; }
+    .work-tab { font-size: 0.72rem; padding: 10px 14px; flex-shrink: 0; white-space: nowrap; min-height: 44px; }
     .work-subproject-title { font-size: 1.1rem; }
     .sub-project-names { font-size: 0.85rem; line-height: 1.5; }
     .work-card .client-name { font-size: 1.05rem; }
@@ -1172,6 +1165,8 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     .about-content { grid-template-columns: 1fr; gap: 40px; }
     .about-stats { flex-direction: row; gap: 40px; }
     .contact-info { flex-direction: column; gap: 16px; }
+    .clients-row { gap: 28px 36px; }
+    .faq-item p { padding-right: 12px; }
 
     footer { padding: 24px; }
   }
@@ -1192,20 +1187,46 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     nav .nav-links.mobile-open { display: flex; }
     nav .nav-links a { font-size: 1.1rem; color: var(--color-text-on-dark); }
 
-    .hero { min-height: auto; padding: 100px 24px 60px; }
+    .hero { min-height: auto; padding: 100px 20px 60px; }
     .hero h1 { font-size: 2rem; }
     .hero-sub { font-size: 1rem; }
+    section { padding: clamp(50px, 8vw, 80px) 20px; }
     .approach-grid { grid-template-columns: 1fr; }
     .about-stats { flex-direction: column; gap: 24px; }
 
     .service-card { padding: 28px 20px; }
     .work-card { padding: 24px 16px; }
-    .work-card.expanded { padding: 24px 12px; }
-    .work-tab { font-size: 0.62rem; padding: 6px 10px; }
+    .work-card.expanded { padding: 24px 16px; }
+    .work-tab { font-size: 0.68rem; padding: 8px 12px; min-height: 44px; }
     .work-subproject-title { font-size: 1rem; margin-bottom: 12px; }
+    .work-toggle { min-height: 44px; padding: 8px 0; }
+    .sub-project-names { font-size: 0.82rem; }
+    .clients-row { gap: 20px 28px; }
+    .clients-row span { font-size: 0.85rem; }
+    .faq-item summary { font-size: 1.05rem; }
+    .faq-item p { padding-right: 4px; font-size: 0.9rem; }
+    .contact-subtitle { font-size: 0.95rem; }
     .boyd-stats { grid-template-columns: 1fr; gap: 20px; }
     .arcs-row { flex-direction: column; gap: 4px; }
     .arcs-ooda { min-width: auto; }
+    .btn { padding: 14px 28px; min-height: 48px; font-size: 0.8rem; }
+    .btn-nav { min-height: 44px; }
+    .work-request-btn { min-height: 44px; padding: 12px 20px; }
+    nav { padding: 14px 20px; }
+    footer { padding: 20px; }
+  }
+
+  @media (hover: none) {
+    .work-card:hover,
+    .service-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .btn-primary:hover,
+    .btn-outline:hover,
+    .btn-nav:hover {
+      transform: none;
+    }
   }
 </style>
 </head>
