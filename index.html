@@ -670,6 +670,35 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     border: 0;
   }
 
+  /* Custom fullscreen button overlay */
+  .work-video-fullscreen {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .work-video-fullscreen:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  .work-video-fullscreen svg {
+    width: 20px;
+    height: 20px;
+  }
+
   /* Password protected / special badges */
   .work-protected-badge {
     font-family: var(--font-ui);
@@ -1428,7 +1457,7 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
         <div class="work-card-header">
           <div class="project-type">Broadcast Spots</div>
           <div class="client-name">Taco Bell — Broadcast Spots</div>
-          <p>Initially brought on as a lighting consultant for a brand partnership with NFL player Davante Adams. The success of the collaboration expanded into a creative consulting role across a run of nationally televised spots.</p>
+          <p>Initially brought on as a production consultant for a brand partnership with NFL player Davante Adams. The success of the collaboration expanded into a creative consulting role across a run of nationally televised spots.</p>
           <div class="sub-project-names">Devante Adams: Moving Day · Perfect Bite Nachos · Trio Cravings · Burrito Cravings · Stackers Maker Booth · Lowrider: Street Chalupa</div>
           <button class="work-toggle" aria-expanded="false">VIEW WORK <span class="toggle-arrow">&#9654;</span></button>
         </div>
@@ -1941,7 +1970,19 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
         '?autoplay=0&title=0&byline=0&portrait=0&dnt=1' + (sp.h ? '&h=' + sp.h : '');
       vc.innerHTML = '<iframe src="' + embedUrl +
         '" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen loading="lazy" title="' +
-        sp.label + '"></iframe>';
+        sp.label + '"></iframe>' +
+        '<button class="work-video-fullscreen" aria-label="Fullscreen" title="Watch fullscreen">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>' +
+        '</svg></button>';
+      vc.querySelector('.work-video-fullscreen').addEventListener('click', function() {
+        var iframe = vc.querySelector('iframe');
+        if (iframe) {
+          if (iframe.requestFullscreen) iframe.requestFullscreen();
+          else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+          else if (iframe.webkitEnterFullscreen) iframe.webkitEnterFullscreen();
+        }
+      });
     } else {
       vc.innerHTML = '<div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--color-text-secondary);font-family:var(--font-ui);font-size:0.9rem;">Video coming soon</div>';
     }
