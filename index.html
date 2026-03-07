@@ -580,6 +580,13 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     box-shadow: none;
   }
 
+  @media (hover: none) {
+    .work-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
   /* Expanded content area */
   .work-card-expanded {
     max-height: 0;
@@ -1136,10 +1143,30 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
 
     .services-grid { grid-template-columns: 1fr; }
-    .work-grid { grid-template-columns: 1fr; }
-    .work-video-container { max-width: 100%; }
-    .work-tabs { gap: 6px; }
-    .work-tab { font-size: 0.68rem; padding: 6px 14px; }
+    .work-grid { grid-template-columns: 1fr; gap: 16px; }
+    .work-card { padding: 28px 20px; }
+    .work-card.expanded { padding: 28px 16px; }
+    .work-card.expanded .work-card-expanded {
+      max-height: 1200px;
+    }
+    .work-video-container {
+      max-width: 100%;
+      padding-bottom: 56.25%;
+    }
+    .work-tabs {
+      gap: 6px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .work-tabs::-webkit-scrollbar { display: none; }
+    .work-tab { font-size: 0.65rem; padding: 7px 12px; flex-shrink: 0; white-space: nowrap; }
+    .work-subproject-title { font-size: 1.1rem; }
+    .sub-project-names { font-size: 0.85rem; line-height: 1.5; }
+    .work-card .client-name { font-size: 1.05rem; }
+    .work-card p { font-size: 0.85rem; }
     .approach-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
     .approach-connector { display: none; }
     .about-content { grid-template-columns: 1fr; gap: 40px; }
@@ -1171,16 +1198,11 @@ if (window.location.hostname === 'theintrepidmedia.com' || window.location.hostn
     .approach-grid { grid-template-columns: 1fr; }
     .about-stats { flex-direction: column; gap: 24px; }
 
-    .service-card { padding: 28px 24px; }
-    .work-card { padding: 28px 24px; }
-    .work-tabs {
-      overflow-x: auto;
-      flex-wrap: nowrap;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .work-tabs::-webkit-scrollbar { display: none; }
-    .work-tab { flex-shrink: 0; }
+    .service-card { padding: 28px 20px; }
+    .work-card { padding: 24px 16px; }
+    .work-card.expanded { padding: 24px 12px; }
+    .work-tab { font-size: 0.62rem; padding: 6px 10px; }
+    .work-subproject-title { font-size: 1rem; margin-bottom: 12px; }
     .boyd-stats { grid-template-columns: 1fr; gap: 20px; }
     .arcs-row { flex-direction: column; gap: 4px; }
     .arcs-ooda { min-width: auto; }
